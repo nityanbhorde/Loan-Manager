@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<a href="{% url 'index' %}">Back to loan list</a>
+	<h3>{{ loan.name}}</h3>
+	<p> {{ loan.money }} </p>
+{% endblock %}

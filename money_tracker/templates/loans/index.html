@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Current Loans</h3>
+    <ul>
+    	{% for loan in loans %}
+    		<li>
+    			<a href="{% url 'loan_detail' loan.id %}">
+    				{{ loan.name|capfirst }}
+    			</a>
+    		</li>
+    	{% endfor %}
+    </ul>
+{% endblock %}

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from loans import views
 urlpatterns = [
+    url(r'^$', views.index, name = 'index'),
+    url(r'^loan/(?P<id>\d+)/', views.loan_detail, name = 'loan_detail'),
     url(r'^admin/', admin.site.urls),
 ]
