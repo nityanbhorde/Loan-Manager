@@ -1,12 +1,16 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Inventory Project</title>
+        <title>Loan Project</title>
         <meta name="description" content="">
     </head>
     <body>
+    	<link rel = "stylesheet" href= "{% static 'finish.css' %}">
     	{% block content %}
     	{% endblock content %}
-    </body>
+    	<script src = "{% static 'main.js' %}"> </script>
+   	</body>
 </html>

@@ -16,6 +16,6 @@ def loan_detail(request,id):
     except Loan.DoesNotExist:
         raise Http404('There is no loan')
     return render(request,'loans/loan_detail.html',{
-        'loan' : loan,
+        'loans' : loan,
         })
 # Create your views here.
