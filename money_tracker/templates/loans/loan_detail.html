@@ -2,6 +2,16 @@
 
 {% block content %}
 	<a href="{% url 'index' %}">Back to loan list</a>
-	<h3>{{ loans.name}}</h3>
-	<p> {{ loans.money }} </p>
+	{% if loan.money > 0 %}
+        <p>{{ loan.name}} currently owes you ${{ loan.money }}.</p>
+    {% else %}
+    	<p>You currently owe {{ loan.name}} ${{ loan.absolute }} </p>
+    {% endif %}
+    <p> How much does he owe you now? 
+	<form method = "post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type = "submit"> Submit </button>
+	</form>
+	</p>
 {% endblock %}

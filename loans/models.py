@@ -5,3 +5,7 @@ class Loan(models.Model):
     money = models.IntegerField()
     def absolute(self):
         return abs(self.money)
+
+
+class Post(models.Model):
+    post = models.CharField(max_length = 500)
