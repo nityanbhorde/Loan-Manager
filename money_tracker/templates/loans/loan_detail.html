@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<center>
+	<div>
 	<a href="{% url 'index' %}">Back to loan list</a>
+	
 	{% if loan.money > 0 %}
         <p>{{ loan.name}} currently owes you ${{ loan.money }}.</p>
     {% else %}
@@ -14,4 +17,6 @@
 		<button type = "submit"> Submit </button>
 	</form>
 	</p>
+	</div>
+	</center>
 {% endblock %}

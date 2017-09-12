@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <center>
     <h3>Current Loans</h3>
     <ul>
 
     	{% for loan in loans %}
     		<li>
-
+            <div>
                 {% if loan.money > 0 %}
                     <a href="{% url 'loan_detail' loan.id %}"> {{ loan.name|capfirst }}</a> owes you ${{loan.money}}
                 {% else %}
-                    you owe   <a href="{% url 'loan_detail' loan.id %}">  {{ loan.name|capfirst }} </a> ${{loan.absolute}}
+                    You owe   <a href="{% url 'loan_detail' loan.id %}">  {{ loan.name|capfirst }} </a> ${{loan.absolute}}
                 {% endif %}
+                </div>
     		</li>
     	{% endfor %}
     </ul>
+    </center>
 {% endblock %}
